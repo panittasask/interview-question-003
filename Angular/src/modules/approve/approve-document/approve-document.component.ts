@@ -42,7 +42,10 @@ export class ApproveDocumentComponent {
   isLoading = false;
 
   get allSelected(): boolean {
-    return this.selectableRows.length > 0 && this.selectedIds.size === this.selectableRows.length;
+    return (
+      this.selectableRows.length > 0 &&
+      this.selectedIds.size === this.selectableRows.length
+    );
   }
 
   get selectedCount(): number {
@@ -110,11 +113,13 @@ export class ApproveDocumentComponent {
     }
 
     const status = modalAction === 'อนุมัติ' ? 2 : 3;
-    const payloads: UpdateDocumentStatusRequest[] = [...this.selectedIds].map((id) => ({
-      id,
-      status,
-      description: this.reasonText,
-    }));
+    const payloads: UpdateDocumentStatusRequest[] = [...this.selectedIds].map(
+      (id) => ({
+        id,
+        status,
+        description: this.reasonText,
+      }),
+    );
 
     this.isLoading = true;
 
@@ -140,7 +145,9 @@ export class ApproveDocumentComponent {
           status: this.toStatusText(item.status),
           statusCode: item.status,
         }));
-        const availableIds = new Set(this.rows.filter((x) => x.statusCode === 1).map((x) => x.id));
+        const availableIds = new Set(
+          this.rows.filter((x) => x.statusCode === 1).map((x) => x.id),
+        );
         this.selectedIds.forEach((id) => {
           if (!availableIds.has(id)) {
             this.selectedIds.delete(id);
