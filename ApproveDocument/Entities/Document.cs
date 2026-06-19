@@ -2,9 +2,9 @@ namespace ApproveDocument.Entities;
 
 public enum DocumentStatus
 {
-    Pending = 0,
-    Approved = 1,
-    Rejected = 2
+    Pending = 1,
+    Approved = 2,
+    Rejected = 3
 }
 
 public class Document

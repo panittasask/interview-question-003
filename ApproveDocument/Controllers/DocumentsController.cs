@@ -1,4 +1,5 @@
 using ApproveDocument.Data;
+using ApproveDocument.Entities;
 using ApproveDocument.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -57,6 +58,16 @@ public class DocumentsController(AppDbContext dbContext) : ControllerBase
     [HttpPost("status")]
     public async Task<IActionResult> UpdateDocumentStatus([FromBody] UpdateDocumentStatusRequest request)
     {
+        if (!Enum.IsDefined(typeof(DocumentStatus), request.Status))
+        {
+            return BadRequest(new { message = "Invalid status. Allowed values: 1 = Pending, 2 = Approved, 3 = Rejected" });
+        }
+
+        if (request.Status is DocumentStatus.Approved or DocumentStatus.Rejected)
+        {
+            return BadRequest(new { message = "Cannot update document with status 2 or 3. Only status 1 (Pending) is allowed." });
+        }
+
         var document = await dbContext.Documents.FirstOrDefaultAsync(x => x.Id == request.Id);
         if (document is null)
         {
