@@ -1,0 +1,16 @@
+<aside class="sidebar">
+  <nav class="menu-list">
+    <a *ngFor="let menu of menus" class="parent-menu">
+      {{ menu.label }}
+      @for (child of menu.child; let i = $index; track i) {
+        <a
+          [routerLink]="child.routes"
+          routerLinkActive="active"
+          class="menu-item"
+        >
+          {{ child.label }}
+        </a>
+      }
+    </a>
+  </nav>
+</aside>

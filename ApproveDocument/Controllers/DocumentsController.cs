@@ -63,9 +63,9 @@ public class DocumentsController(AppDbContext dbContext) : ControllerBase
             return BadRequest(new { message = "Invalid status. Allowed values: 1 = Pending, 2 = Approved, 3 = Rejected" });
         }
 
-        if (request.Status is DocumentStatus.Approved or DocumentStatus.Rejected)
+        if (request.Status is DocumentStatus.Pending)
         {
-            return BadRequest(new { message = "Cannot update document with status 2 or 3. Only status 1 (Pending) is allowed." });
+            return BadRequest(new { message = "Cannot update document to status 1 (Pending). Allowed values are 2 (Approved) or 3 (Rejected)." });
         }
 
         var document = await dbContext.Documents.FirstOrDefaultAsync(x => x.Id == request.Id);

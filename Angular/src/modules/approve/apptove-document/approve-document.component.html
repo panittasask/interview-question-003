@@ -1,0 +1,28 @@
+<div class="main-content">
+  <div class="button-container">
+    <button class="approve button-list">อนุมัติ</button>
+    <button class="reject button-list">ไม่อนุมัติ</button>
+  </div>
+  <div class="table-container">
+    <table class="approve-table">
+      <thead>
+        <tr>
+          <th>select</th>
+          <th>รายการ</th>
+          <th>เหตุผล</th>
+          <th>สถานะเอกสาร</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (row of rows; track row.id) {
+          <tr>
+            <td><input type="checkbox" /></td>
+            <td>{{ row.item }}</td>
+            <td>{{ row.reason }}</td>
+            <td>{{ row.status }}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,24 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Work Space\\Api\\ApproveDocument\\ApproveDocument\\ApproveDocument.csproj": {}
+    "C:\\Users\\Ice\\Desktop\\thaibev test case\\git\\interview-question-003\\ApproveDocument\\ApproveDocument.csproj": {}
   },
   "projects": {
-    "D:\\Work Space\\Api\\ApproveDocument\\ApproveDocument\\ApproveDocument.csproj": {
+    "C:\\Users\\Ice\\Desktop\\thaibev test case\\git\\interview-question-003\\ApproveDocument\\ApproveDocument.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Work Space\\Api\\ApproveDocument\\ApproveDocument\\ApproveDocument.csproj",
+        "projectUniqueName": "C:\\Users\\Ice\\Desktop\\thaibev test case\\git\\interview-question-003\\ApproveDocument\\ApproveDocument.csproj",
         "projectName": "ApproveDocument",
-        "projectPath": "D:\\Work Space\\Api\\ApproveDocument\\ApproveDocument\\ApproveDocument.csproj",
-        "packagesPath": "C:\\Users\\napatsai\\.nuget\\packages\\",
-        "outputPath": "D:\\Work Space\\Api\\ApproveDocument\\ApproveDocument\\obj\\",
+        "projectPath": "C:\\Users\\Ice\\Desktop\\thaibev test case\\git\\interview-question-003\\ApproveDocument\\ApproveDocument.csproj",
+        "packagesPath": "C:\\Users\\Ice\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Ice\\Desktop\\thaibev test case\\git\\interview-question-003\\ApproveDocument\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\napatsai\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Ice\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -27,12 +26,10 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
-            "framework": "net8.0",
             "targetAlias": "net8.0",
             "projectReferences": {}
           }
@@ -47,11 +44,10 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "10.0.300"
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
-          "framework": "net8.0",
           "targetAlias": "net8.0",
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
@@ -92,7 +88,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

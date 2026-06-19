@@ -1,0 +1,154 @@
+.main-content {
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  .button-container {
+    display: flex;
+    gap: 8px;
+  }
+
+  .button-list {
+    padding: 8px 14px;
+    border: 0;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+  }
+
+  .approve {
+    background: #2f855a;
+  }
+
+  .reject {
+    background: #c53030;
+  }
+
+  .table-container {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .approve-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .approve-table th,
+  .approve-table td {
+    padding: 10px 12px;
+    border: 1px solid oklch(96.7% 0.003 264.542);
+    text-align: left;
+    font-size: 14px;
+  }
+
+  .approve-table th {
+    background: oklch(62.3% 0.214 259.815);
+    color: white;
+    font-weight: 600;
+  }
+
+  .approve-table tbody tr {
+    cursor: pointer;
+  }
+
+  .approve-table tbody tr.selected {
+    background: #edf2ff;
+  }
+
+  .action-popover {
+    width: min(360px, calc(100vw - 24px));
+    background: white;
+    border-radius: 10px;
+    border: 0;
+    // padding: 16px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    display: none;
+  }
+  .modal-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    .modal-header {
+      background-color: oklch(62.3% 0.214 259.815);
+      padding: 20px;
+      font-size: 20px;
+      color: white;
+    }
+    .modal-body {
+      padding: 20px 30px;
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      .reason {
+        width: 100%;
+        flex: 1;
+        text-wrap: nowrap;
+      }
+      > textarea {
+        width: 100%;
+        resize: vertical;
+        field-sizing: content;
+        min-height: 10vh;
+      }
+    }
+    .modal-footer {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      padding: 20px;
+      justify-content: flex-end;
+    }
+  }
+
+  .action-popover:popover-open {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-width: 30vw;
+  }
+
+  .action-popover::backdrop {
+    background: rgba(0, 0, 0, 0.35);
+  }
+
+  .modal-title {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .modal-desc {
+    margin: 0;
+    font-size: 14px;
+    color: #4a5568;
+  }
+
+  .btn-cancel,
+  .btn-confirm {
+    border: 0;
+    border-radius: 6px;
+    padding: 8px 12px;
+    cursor: pointer;
+  }
+
+  .btn-cancel {
+    background: #e2e8f0;
+    color: #1a202c;
+  }
+
+  .btn-confirm {
+    background: #2d3748;
+    color: white;
+  }
+}
+[popover] {
+  padding: 0;
+  > div {
+    // padding: 0.25rem;
+  }
+}

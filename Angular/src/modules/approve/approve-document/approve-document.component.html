@@ -1,0 +1,91 @@
+<div class="main-content">
+  <div class="button-container">
+    <button
+      class="approve button-list"
+      popovertarget="actionPopover"
+      popovertargetaction="show"
+      [disabled]="!selectedCount || isLoading"
+      (click)="setModalAction('อนุมัติ')"
+    >
+      อนุมัติ
+    </button>
+    <button
+      class="reject button-list"
+      popovertarget="actionPopover"
+      popovertargetaction="show"
+      [disabled]="!selectedCount || isLoading"
+      (click)="setModalAction('ไม่อนุมัติ')"
+    >
+      ไม่อนุมัติ
+    </button>
+  </div>
+
+  <div class="table-container">
+    <table class="approve-table">
+      <thead>
+        <tr>
+          <th>
+            <input
+              type="checkbox"
+              [checked]="allSelected"
+              [disabled]="isLoading || rows.length === 0"
+              (change)="onToggleAll($event)"
+            />
+          </th>
+          <th>รายการ</th>
+          <th>เหตุผล</th>
+          <th>สถานะเอกสาร</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (row of rows; track row.id) {
+          <tr
+            [class.selected]="isSelected(row.id)"
+            (click)="toggleRowByClick(row.id)"
+          >
+            <td>
+              <input
+                type="checkbox"
+                [checked]="isSelected(row.id)"
+                [disabled]="row.statusCode !== 1 || isLoading"
+                (click)="$event.stopPropagation()"
+                (change)="onToggleRowChange(row.id, $event)"
+              />
+            </td>
+            <td>{{ row.item }}</td>
+            <td>{{ row.reason }}</td>
+            <td>{{ row.status }}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+
+  <div id="actionPopover" popover="manual" class="action-popover">
+    <div class="modal-container">
+      <div class="modal-header">ยืนยันการ{{ modalAction }}</div>
+      <div class="modal-body">
+        <div class="reason">เหตุผล :</div>
+        <textarea [(ngModel)]="reasonText"></textarea>
+      </div>
+      <div class="modal-footer">
+        <button
+          class="button-list confirm"
+          popovertarget="actionPopover"
+          popovertargetaction="hide"
+          [disabled]="!selectedCount || isLoading"
+          (click)="confirmAction()"
+        >
+          {{ modalAction }}
+        </button>
+        <button
+          class="button-list reject"
+          popovertarget="actionPopover"
+          popovertargetaction="hide"
+        >
+          ยกเลิก
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,1 +1,12 @@
-{"Version":1,"Hash":"yAQvvN4uXBTqbalgYTm2xFtCfpYPqhDKb53iK41KVnY=","Source":"ApproveDocument","BasePath":"/","Mode":"Root","ManifestType":"Build","ReferencedProjectsConfiguration":[],"DiscoveryPatterns":[],"Assets":[],"Endpoints":[]}
+{
+  "Version": 1,
+  "Hash": "c2bS2SddaK0ajMs0Ypb71jR97H4tpgjgNa8TDh9wFfg=",
+  "Source": "ApproveDocument",
+  "BasePath": "_content/ApproveDocument",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

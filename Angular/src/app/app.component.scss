@@ -1,0 +1,32 @@
+:host {
+  //   display: block;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #f5f6f8;
+}
+
+.layout {
+  display: flex;
+  align-items: stretch;
+  flex: 1;
+}
+
+.main-content {
+  flex: 1;
+  padding: 16px;
+}
+
+@media (max-width: 960px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .main-content {
+    padding: 12px;
+  }
+}
